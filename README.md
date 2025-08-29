@@ -10,27 +10,27 @@ Este repositório é um template `base para projetos FastAPI`, já estruturado c
 ````bash
 fastapi_project/
 │── app/
-│   ├── api/
-│   │   └── v1/
-│   │       └── endpoints/
-│   │           └── users.py
-│   ├── core/
-│   │   └── config.py
-│   ├── db/
-│   │   ├── base.py
-│   │   └── session.py
+│   ├── controller/
+│   │   └── user_controller.py
+│   ├── utils/
+│   │   └── utils.py
+│   ├── dependecias/
+│   │   ├── conexao_postgres.py
+│   │   └── security.py
+│   │   └── settings.py
 │   ├── models/
-│   │   └── user.py
-│   ├── schemas/
-│   │   └── user.py
+│   │   └── perms_model.py
+│   │   └── user_model.py
+│   ├── repository/
+│   │   └── usuario_repository.py
 │   ├── main.py
-│   └── __init__.py
-│
-├── tests/
-│   └── test_users.py
 │
 ├── .env
+├── .env-exemplo
+├── .gitignore
 ├── requirements.txt
+├── docker-compose.yml
+├── run2.sh     # Produção
 ├── run.sh      # Linux / MacOS
 ├── run.bat     # Windows (CMD)
 ├── run.ps1     # Windows (PowerShell)
@@ -85,9 +85,11 @@ POSTGRES_PORT=5432
 
 ````bash
 
+# Rodar o projeto em produção:
+$ ./run2.sh
+
 # Linux / MacOS:
 $ ./run.sh
-
 
 # Windows (CMD):
 $ run.bat
