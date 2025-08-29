@@ -9,3 +9,4 @@ SQLAlchemy==2.0.34
 setuptools==68.2.2
 wheel==0.21.0
 python-dotenv
+passlib[bcrypt]

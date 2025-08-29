@@ -46,12 +46,14 @@ fastapi_project/
 
 ### 1️⃣ Clonar o repositório
 ```bash
-git clone https://github.com/seuusuario/fastapi-template.git
+git clone https://github.com/Gelzieny/fastapi-template.git
 cd fastapi-template
+```
+
+### Criar ambiente virtual
 
 
-
-### 🍏 MacOS & 🐧 Linux (Ubuntu/Debian/Fedora/etc.)
+#### 🍏 MacOS & 🐧 Linux (Ubuntu/Debian/Fedora/etc.)
 ````bash
 python3 -m venv venv && source venv/bin/activate && pip install -r requirements.txt
 
@@ -59,10 +61,61 @@ python3 -m venv venv && source venv/bin/activate && pip install -r requirements.
 python3 manage.py
 ````
 
-### 🪟 Windows
+#### 🪟 Windows
 ````bash
 python3 -m venv venv && venv\Scripts\activate && pip install -r requirements.txt
 
 #Iniciando servidor
 python manage.py
 ````
+
+## 🛠️ Configuração
+
+Edite o arquivo .env para configurar o banco de dados:
+
+````bash
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=123
+POSTGRES_DB=meu_banco
+POSTGRES_SERVER=localhost
+POSTGRES_PORT=5432
+````
+
+## ▶️ Executando o projeto
+
+````bash
+
+# Linux / MacOS:
+$ ./run.sh
+
+
+# Windows (CMD):
+$ run.bat
+
+# Windows (PowerShell):
+$ .\run.ps1
+````
+Servidor rodará em:
+👉 [http://localhost:8080](http://localhost:8080)  
+
+
+## 📚 Documentação da API
+
+FastAPI gera a documentação automaticamente:
+
+* [Swagger UI:](http://localhost:8080/docs)
+* [Redoc:](http://localhost:8080/redoc)
+
+## 🧪 Testes
+Rodar testes com `pytest`:
+
+````bash
+$ pytest -v
+````
+
+🚀 Futuras melhorias
+
+* Integração com Docker + Docker Compose
+* Migrações automáticas com Alembic
+* Autenticação com JWT / OAuth2
+* CI/CD com GitHub Actions / GitLab CI
