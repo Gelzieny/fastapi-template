@@ -3,6 +3,7 @@ from fastapi.openapi.utils import get_openapi
 from starlette.responses import RedirectResponse
 
 from app.controller.user_controller import usuario_controller
+from app.dependecias.settings import settings
 
 app = FastAPI(
     title="Template API - FastAPI",
@@ -15,9 +16,11 @@ app = FastAPI(
 
     Pode ser utilizado como ponto de partida para novos projetos, garantindo boas práticas e organização.
     """,
-    version="1.0.0"
+    version=settings.APP_VERSION,
+    root_path=settings.APP_CONTEXT_PATH if settings.APP_CONTEXT_PATH else ""
 )
 
+app.openapi_version = "3.0.2"
 app.include_router(usuario_controller)
 
 # --- Rota de Redirecionamento da Raiz para a Documentação ---

@@ -4,6 +4,9 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file='.env', extra='ignore')
     
+    APP_CONTEXT_PATH: str
+    APP_VERSION: str
+
     POSTGRES_PRODUCAO_DB: str
     POSTGRES_PRODUCAO_USER: str
     POSTGRES_PRODUCAO_HOST: str
