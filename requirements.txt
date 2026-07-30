@@ -1,5 +1,5 @@
 psutil
-fastapi==0.98.0
+fastapi==0.128.0
 requests
 gunicorn
 psycopg2
